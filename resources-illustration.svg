@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+<rect width="700" height="450" rx="30" fill="#eef7ff"/>
+<rect x="105" y="80" width="490" height="300" rx="20" fill="white" stroke="#dce7ef" stroke-width="5"/>
+<rect x="135" y="115" width="180" height="20" rx="10" fill="#1269d3"/>
+<rect x="135" y="160" width="390" height="12" rx="6" fill="#c7d8e6"/>
+<rect x="135" y="188" width="330" height="12" rx="6" fill="#d9e5ee"/>
+<rect x="135" y="235" width="115" height="90" rx="12" fill="#06284d"/>
+<rect x="270" y="235" width="115" height="90" rx="12" fill="#1269d3"/>
+<rect x="405" y="235" width="115" height="90" rx="12" fill="#7aa9d8"/>
+<text x="350" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#06284d">Learning Resources</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+<rect width="700" height="450" rx="30" fill="#f4f8fb"/>
+<circle cx="350" cy="220" r="145" fill="#06284d"/><circle cx="350" cy="220" r="112" fill="white"/>
+<path d="M350 145v82l58 35" fill="none" stroke="#1269d3" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="350" cy="220" r="9" fill="#1269d3"/>
+<text x="350" y="65" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#06284d">Interactive Quiz</text>
+<text x="350" y="395" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#60758a">ANSWER • CHECK • IMPROVE</text>
+</svg>
