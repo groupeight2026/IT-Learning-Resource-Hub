@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sample Questions - IT Learning Resource Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #efe3fc;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #442b02;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: #442b02;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .title h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* SUBJECT GRID */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .subject-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .subject-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .subject-card h2 {
+            font-size: 20px;
+        }
+
+        /* QUESTION PAGE */
+        .question-page {
+            display: none;
+        }
+
+        .question-page.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #57357d;
+            color: #f6a6e7;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        .subject-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subject-title h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subject-title p {
+            color: #666;
+        }
+
+        /* QUESTION CARD */
+        .question-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .question-number {
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        /* CODE */
+        .code-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        /* ANSWER */
+        .answer {
+            background: #ecfdf5;
+            border-left: 5px solid #16a34a;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .answer strong {
+            color: #15803d;
+        }
+
+        /* END BUTTON */
+        .end-button {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 25px auto;
+            }
+
+            .title h1 {
+                font-size: 27px;
+            }
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subject-card {
+                padding: 25px;
+            }
+
+            .question-card {
+                padding: 18px;
+            }
+
+            .question-text {
+                font-size: 16px;
+            }
+
+            pre {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        IT Learning Resource Hub
+    </div>
+
+    <a href="index.html" class="home-link">
+        Home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     SAMPLE QUESTION HOME
+===================================================== -->
+
+<div id="sampleHome" class="container">
+
+    <div class="title">
+        <h1>Sample Questions</h1>
+        <p>Select a subject to view its sample questions.</p>
+    </div>
+
+    <div class="subject-grid">
+
+        <div class="subject-card" onclick="openSubject('cpp')">
+            <div class="subject-icon">💻</div>
+            <h2>C++</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('csharp')">
+            <div class="subject-icon">💻</div>
+            <h2>C#</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('java')">
+            <div class="subject-icon">☕</div>
+            <h2>Java</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('html')">
+            <div class="subject-icon">🌐</div>
+            <h2>HTML</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('css')">
+            <div class="subject-icon">🎨</div>
+            <h2>CSS</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('circuit')">
+            <div class="subject-icon">⚡</div>
+            <h2>Circuit</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('electronics')">
+            <div class="subject-icon">🔌</div>
+            <h2>Digital Electronics</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('communication')">
+            <div class="subject-icon">📡</div>
+            <h2>Digital Communication</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('dbms')">
+            <div class="subject-icon">🗄️</div>
+            <h2>DBMS</h2>
+        </div>
+
+        <div class="subject-card" onclick="openSubject('datastructure')">
+            <div class="subject-icon">🌳</div>
+            <h2>Data Structure</h2>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     C++
+===================================================== -->
+
+<div id="cpp" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>C++ Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="cppQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     C#
+===================================================== -->
+
+<div id="csharp" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>C# Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="csharpQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVA
+===================================================== -->
+
+<div id="java" class="question-page container">
+
+    
+    <div class="subject-title">
+        <h1>Java Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="javaQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     HTML
+===================================================== -->
+
+<div id="html" class="question-page container">
+
+   
+
+    <div class="subject-title">
+        <h1>HTML Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="htmlQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     CSS
+===================================================== -->
+
+<div id="css" class="question-page container">
+
+   
+
+    <div class="subject-title">
+        <h1>CSS Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="cssQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     CIRCUIT
+===================================================== -->
+
+<div id="circuit" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>Circuit Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="circuitQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     DIGITAL ELECTRONICS
+===================================================== -->
+
+<div id="electronics" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>Digital Electronics Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="electronicsQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     DIGITAL COMMUNICATION
+===================================================== -->
+
+<div id="communication" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>Digital Communication Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="communicationQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     DBMS
+===================================================== -->
+
+<div id="dbms" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>DBMS Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="dbmsQuestions"></div>
+
+</div>
+
+
+<!-- =====================================================
+     DATA STRUCTURE
+===================================================== -->
+
+<div id="datastructure" class="question-page container">
+
+    
+
+    <div class="subject-title">
+        <h1>Data Structure Sample Questions</h1>
+        <p>10 sample questions with answers</p>
+    </div>
+
+    <div id="datastructureQuestions"></div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   QUESTION DATA
+===================================================== */
+
+const questions = {
+
+    cpp: [
+        {
+            question: "What will this C++ program print?",
+            code:
+`#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello";
+}`,
+            answer: "Hello"
+        },
+
+        {
+            question: "What is the value of x?",
+            code:
+`int x = 10;
+int y = 5;
+
+int z = x + y;
+
+cout << z;`,
+            answer: "15"
+        },
+
+        {
+            question: "What will be printed?",
+            code:
+`int x = 10;
+
+if (x > 5)
+    cout << "Yes";
+else
+    cout << "No";`,
+            answer: "Yes"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`for (int i = 1; i <= 3; i++)
+{
+    cout << i;
+}`,
+            answer: "123"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int a = 5;
+int b = 2;
+
+cout << a * b;`,
+            answer: "10"
+        },
+
+        {
+            question: "What is the value returned by the function?",
+            code:
+`int add(int a, int b)
+{
+    return a + b;
+}
+
+cout << add(3, 4);`,
+            answer: "7"
+        },
+
+        {
+            question: "What is the first element of the array?",
+            code:
+`int numbers[3] = {
+    10, 20, 30
+};
+
+cout << numbers[0];`,
+            answer: "10"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int x = 5;
+
+x++;
+
+cout << x;`,
+            answer: "6"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`string name = "John";
+
+cout << name;`,
+            answer: "John"
+        },
+
+        {
+            question: "Which keyword is used to create a class?",
+            code:
+`class Student
+{
+public:
+    string name;
+};`,
+            answer: "class"
+        }
+    ],
+
+
+    csharp: [
+        {
+            question: "What will this C# program print?",
+            code:
+`using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello");
+    }
+}`,
+            answer: "Hello"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int x = 10;
+int y = 5;
+
+Console.WriteLine(x + y);`,
+            answer: "15"
+        },
+
+        {
+            question: "What is printed?",
+            code:
+`int x = 10;
+
+if (x > 5)
+    Console.WriteLine("Yes");`,
+            answer: "Yes"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`for (int i = 1; i <= 3; i++)
+{
+    Console.Write(i);
+}`,
+            answer: "123"
+        },
+
+        {
+            question: "What is the value of result?",
+            code:
+`int a = 4;
+int b = 3;
+
+int result = a * b;
+
+Console.WriteLine(result);`,
+            answer: "12"
+        },
+
+        {
+            question: "What does this method return?",
+            code:
+`static int Add(int a, int b)
+{
+    return a + b;
+}
+
+Console.WriteLine(Add(2, 5));`,
+            answer: "7"
+        },
+
+        {
+            question: "What is the first array element?",
+            code:
+`int[] nums = {
+    10, 20, 30
+};
+
+Console.WriteLine(nums[0]);`,
+            answer: "10"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`string name = "Alice";
+
+Console.WriteLine(name);`,
+            answer: "Alice"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int x = 5;
+
+x++;
+
+Console.WriteLine(x);`,
+            answer: "6"
+        },
+
+        {
+            question: "Which keyword creates a class?",
+            code:
+`class Student
+{
+    public string Name;
+}`,
+            answer: "class"
+        }
+    ],
+
+
+    java: [
+        {
+            question: "What will this Java program print?",
+            code:
+`public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}`,
+            answer: "Hello"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int x = 10;
+int y = 5;
+
+System.out.println(x + y);`,
+            answer: "15"
+        },
+
+        {
+            question: "What is printed?",
+            code:
+`int x = 10;
+
+if (x > 5)
+    System.out.println("Yes");`,
+            answer: "Yes"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`for (int i = 1; i <= 3; i++)
+{
+    System.out.print(i);
+}`,
+            answer: "123"
+        },
+
+        {
+            question: "What is the result?",
+            code:
+`int a = 4;
+int b = 2;
+
+System.out.println(a * b);`,
+            answer: "8"
+        },
+
+        {
+            question: "What does this method return?",
+            code:
+`static int add(int a, int b)
+{
+    return a + b;
+}
+
+System.out.println(add(3, 4));`,
+            answer: "7"
+        },
+
+        {
+            question: "What is the first array element?",
+            code:
+`int[] numbers = {
+    10, 20, 30
+};
+
+System.out.println(numbers[0]);`,
+            answer: "10"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`String name = "Java";
+
+System.out.println(name);`,
+            answer: "Java"
+        },
+
+        {
+            question: "What is the output?",
+            code:
+`int x = 5;
+
+x++;
+
+System.out.println(x);`,
+            answer: "6"
+        },
+
+        {
+            question: "Which keyword is used to create a class?",
+            code:
+`class Student
+{
+    String name;
+}`,
+            answer: "class"
+        }
+    ],
+
+
+    html: [
+        {
+            question: "What text will this HTML display?",
+            code:
+`<h1>
+    Hello World
+</h1>`,
+            answer: "Hello World"
+        },
+
+        {
+            question: "Which tag creates a paragraph?",
+            code:
+`<p>
+    This is a paragraph.
+</p>`,
+            answer: "<p>"
+        },
+
+        {
+            question: "Which tag creates a link?",
+            code:
+`<a href="page.html">
+    Click Here
+</a>`,
+            answer: "<a>"
+        },
+
+        {
+            question: "Which tag displays an image?",
+            code:
+`<img
+    src="photo.jpg"
+    alt="Photo"
+>`,
+            answer: "<img>"
+        },
+
+        {
+            question: "Which tag creates an unordered list?",
+            code:
+`<ul>
+    <li>Apple</li>
+    <li>Orange</li>
+</ul>`,
+            answer: "<ul>"
+        },
+
+        {
+            question: "Which tag creates a button?",
+            code:
+`<button>
+    Submit
+</button>`,
+            answer: "<button>"
+        },
+
+        {
+            question: "Which tag creates a text input?",
+            code:
+`<input
+    type="text"
+    placeholder="Name"
+>`,
+            answer: "<input>"
+        },
+
+        {
+            question: "Which tag creates a table?",
+            code:
+`<table>
+    <tr>
+        <td>Name</td>
+    </tr>
+</table>`,
+            answer: "<table>"
+        },
+
+        {
+            question: "Which tag is used for a form?",
+            code:
+`<form>
+    <input type="text">
+    <button>Send</button>
+</form>`,
+            answer: "<form>"
+        },
+
+        {
+            question: "Which tag is used to connect CSS?",
+            code:
+`<head>
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>`,
+            answer: "<link>"
+        }
+    ],
+
+
+    css: [
+        {
+            question: "Which property changes text color?",
+            code:
+`p {
+    color: red;
+}`,
+            answer: "color"
+        },
+
+        {
+            question: "Which property changes background color?",
+            code:
+`body {
+    background-color: blue;
+}`,
+            answer: "background-color"
+        },
+
+        {
+            question: "Which property changes font size?",
+            code:
+`h1 {
+    font-size: 30px;
+}`,
+            answer: "font-size"
+        },
+
+        {
+            question: "Which property makes text bold?",
+            code:
+`p {
+    font-weight: bold;
+}`,
+            answer: "font-weight"
+        },
+
+        {
+            question: "Which property adds space inside an element?",
+            code:
+`.box {
+    padding: 20px;
+}`,
+            answer: "padding"
+        },
+
+        {
+            question: "Which property adds space outside an element?",
+            code:
+`.box {
+    margin: 20px;
+}`,
+            answer: "margin"
+        },
+
+        {
+            question: "Which property changes element width?",
+            code:
+`.box {
+    width: 300px;
+}`,
+            answer: "width"
+        },
+
+        {
+            question: "Which property changes element height?",
+            code:
+`.box {
+    height: 200px;
+}`,
+            answer: "height"
+        },
+
+        {
+            question: "Which property rounds corners?",
+            code:
+`.box {
+    border-radius: 10px;
+}`,
+            answer: "border-radius"
+        },
+
+        {
+            question: "Which property changes text alignment?",
+            code:
+`h1 {
+    text-align: center;
+}`,
+            answer: "text-align"
+        }
+    ],
+
+
+    circuit: [
+        {
+            question: "What is the total resistance in a series circuit?",
+            code:
+`R1 = 10Ω
+R2 = 20Ω
+
+Rtotal = R1 + R2`,
+            answer: "30Ω"
+        },
+
+        {
+            question: "What is the current using Ohm's Law?",
+            code:
+`V = 10V
+R = 5Ω
+
+I = V / R`,
+            answer: "2A"
+        },
+
+        {
+            question: "What is the voltage?",
+            code:
+`I = 2A
+R = 5Ω
+
+V = I × R`,
+            answer: "10V"
+        },
+
+        {
+            question: "What is the power?",
+            code:
+`V = 10V
+I = 2A
+
+P = V × I`,
+            answer: "20W"
+        },
+
+        {
+            question: "What happens when a switch is open?",
+            code:
+`Battery
+   |
+ Switch
+   |
+ Lamp`,
+            answer: "No current flows."
+        },
+
+        {
+            question: "What happens in a short circuit?",
+            code:
+`V = 10V
+R ≈ 0Ω
+
+I = V / R`,
+            answer: "Very large current flows."
+        },
+
+        {
+            question: "What is a resistor used for?",
+            code:
+`Voltage
+   |
+Resistor
+   |
+Ground`,
+            answer: "To limit current."
+        },
+
+        {
+            question: "What does a capacitor store?",
+            code:
+`   + |
+ ┌───┐
+ │ C │
+ └───┘`,
+            answer: "Electrical charge."
+        },
+
+        {
+            question: "What does a battery provide?",
+            code:
+`+ | | -
+  Battery
+    |
+  Circuit`,
+            answer: "Electrical energy."
+        },
+
+        {
+            question: "What instrument measures voltage?",
+            code:
+`+ ────( V )──── +
+       Meter`,
+            answer: "Voltmeter."
+        }
+    ],
+
+
+    electronics: [
+        {
+            question: "What is the output of an AND gate when both inputs are 1?",
+            code:
+`A = 1
+B = 1
+
+Y = A AND B`,
+            answer: "1"
+        },
+
+        {
+            question: "What is the output of an AND gate?",
+            code:
+`A = 1
+B = 0
+
+Y = A AND B`,
+            answer: "0"
+        },
+
+        {
+            question: "What is the output of an OR gate?",
+            code:
+`A = 1
+B = 0
+
+Y = A OR B`,
+            answer: "1"
+        },
+
+        {
+            question: "What is the output of a NOT gate?",
+            code:
+`A = 1
+
+Y = NOT A`,
+            answer: "0"
+        },
+
+        {
+            question: "What is the output of a NAND gate for 1 and 1?",
+            code:
+`A = 1
+B = 1
+
+Y = NAND(A,B)`,
+            answer: "0"
+        },
+
+        {
+            question: "What is the output of a NOR gate for 0 and 0?",
+            code:
+`A = 0
+B = 0
+
+Y = NOR(A,B)`,
+            answer: "1"
+        },
+
+        {
+            question: "How many inputs does a NOT gate normally have?",
+            code:
+`Input
+  |
+ NOT
+  |
+Output`,
+            answer: "1 input"
+        },
+
+        {
+            question: "How many outputs does a basic logic gate have?",
+            code:
+`A ──┐
+    Gate ── Y
+B ──┘`,
+            answer: "1 output"
+        },
+
+        {
+            question: "What does a flip-flop store?",
+            code:
+`Input
+  |
+Flip-Flop
+  |
+Output`,
+            answer: "1 bit"
+        },
+
+        {
+            question: "What number system is commonly used in digital electronics?",
+            code:
+`Digital
+Signals
+
+0 or 1`,
+            answer: "Binary"
+        }
+    ],
+
+
+    communication: [
+        {
+            question: "What is digital communication?",
+          code:
+`Data
+ ↓
+Encoder
+ ↓
+Channel
+ ↓
+Decoder`,
+
+
+            answer: "Digital communication is the exchange of information using digital devices and communication technologies."
+
+        },
+
+        {
+            question: "What is a transmitter used for?",
+            code:
+`Message
+   ↓
+Transmitter
+   ↓
+Signal`,
+            answer: "A transmitter is used to send a signal."
+        },
+
+        {
+            question: "What is a receiver used for?",
+             code:
+`Signal
+   ↓
+Receiver
+   ↓
+Message`,
+
+            answer: "A receiver is used to receive the signal."
+        },
+
+        {
+            question: "What is modulation?",
+             code:
+`Message
+   +
+Carrier
+   ↓
+Modulated
+Signal`,
+
+            answer: " Modulator is changing a carrier signal to carry information."
+        },
+
+        {
+            question: "What is demodulation?",
+            code:
+`Received
+Signal
+   ↓
+Demodulator
+   ↓
+Message`,
+
+            answer: "Demodulation is recovering information from a modulated signal."
+        },
+
+        {
+            question: "What is noise?",
+             code:
+`Signal ────────>
+       +
+     Noise`,
+
+            answer: "Noise is unwanted interference in a signal."
+        },
+
+        {
+            question: "What is a digital signal?",
+             code:
+`Signal
+
+1 ────
+      ┐
+0     └────`,
+
+            answer: "A  digital signal represented by discrete values."
+        },
+
+        {
+            question: "What does a communication channel do?",
+           code:
+`Sender
+  ↓
+Channel
+  ↓
+Receiver`,
+
+            answer: " A communication channel carries information from sender to receiver."
+        },
+
+        {
+            question: "What is bandwidth?",
+            code:
+`Frequency
+ |---------|
+     BW`,
+
+            answer: "Bandwidth is the range of frequencies used by a signal."
+        },
+
+        {
+            question: "What is a bit?",
+            code:
+`Digital Data:
+
+0 or 1`,
+
+            answer: "A bit is the smallest unit of digital data."
+        }
+    ],
+
+
+    dbms: [
+        {
+            question: "What SQL command creates a table?",
+            code:
+`CREATE TABLE Student (
+    id INT,
+    name VARCHAR(50)
+);`,
+            answer: "CREATE TABLE"
+        },
+
+        {
+            question: "What SQL command inserts data?",
+            code:
+`INSERT INTO Student
+VALUES (1, 'John');`,
+            answer: "INSERT INTO"
+        },
+
+        {
+            question: "What SQL command retrieves data?",
+            code:
+`SELECT *
+FROM Student;`,
+            answer: "SELECT"
+        },
+
+        {
+            question: "What clause filters records?",
+            code:
+`SELECT *
+FROM Student
+WHERE id = 1;`,
+            answer: "WHERE"
+        },
+
+        {
+            question: "What command changes existing data?",
+            code:
+`UPDATE Student
+SET name = 'Mary'
+WHERE id = 1;`,
+            answer: "UPDATE"
+        },
+
+        {
+            question: "What command removes records?",
+            code:
+`DELETE FROM Student
+WHERE id = 1;`,
+            answer: "DELETE"
+        },
+
+        {
+            question: "What function calculates an average?",
+            code:
+`SELECT AVG(mark)
+FROM Student;`,
+            answer: "AVG()"
+        },
+
+        {
+            question: "What function counts records?",
+            code:
+`SELECT COUNT(*)
+FROM Student;`,
+            answer: "COUNT()"
+        },
+
+        {
+            question: "Which clause sorts results?",
+            code:
+`SELECT *
+FROM Student
+ORDER BY name;`,
+            answer: "ORDER BY"
+        },
+
+        {
+            question: "Which operator searches for a pattern?",
+            code:
+`SELECT *
+FROM Student
+WHERE name LIKE 'A%';`,
+            answer: "LIKE"
+        }
+    ],
+
+
+    datastructure: [
+        {
+            question: "Which data structure follows LIFO?",
+            code:
+`push(10);
+push(20);
+
+pop();`,
+            answer: "Stack"
+        },
+
+        {
+            question: "Which data structure follows FIFO?",
+            code:
+`enqueue(10);
+enqueue(20);
+
+dequeue();`,
+            answer: "Queue"
+        },
+
+        {
+            question: "What is the first index of an array?",
+            code:
+`int a[3] = {
+    10, 20, 30
+};
+
+a[0];`,
+            answer: "0"
+        },
+
+        {
+            question: "Which data structure uses nodes and links?",
+            code:
+`Node
+ ↓
+Node
+ ↓
+Node`,
+            answer: "Linked List"
+        },
+
+        {
+            question: "Which algorithm searches one item at a time?",
+            code:
+`for each item
+    compare item
+    with target`,
+            answer: "Linear Search"
+        },
+
+        {
+            question: "Which sorting algorithm repeatedly swaps adjacent elements?",
+            code:
+`compare A[i]
+and A[i+1]
+
+swap if needed`,
+            answer: "Bubble Sort"
+        },
+
+        {
+            question: "What does push do in a stack?",
+            code:
+`Stack:
+10
+20
+
+push(30);`,
+            answer: "Adds an element to the top."
+        },
+
+        {
+            question: "What does pop do in a stack?",
+            code:
+`Stack:
+10
+20
+30
+
+pop();`,
+            answer: "Removes the top element."
+        },
+
+        {
+            question: "What does enqueue do?",
+            code:
+`Queue:
+10 → 20
+
+enqueue(30);`,
+            answer: "Adds an element to the queue."
+        },
+
+        {
+            question: "What does dequeue do?",
+            code:
+`Queue:
+10 → 20 → 30
+
+dequeue();`,
+            answer: "Removes the front element."
+        }
+    ]
+
+};
+
+
+/* =====================================================
+   OPEN SUBJECT
+===================================================== */
+
+function openSubject(subject) {
+
+    // Hide home
+    document.getElementById("sampleHome").style.display = "none";
+
+    // Hide all question pages
+    const pages = document.querySelectorAll(".question-page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    // Show selected subject
+    document.getElementById(subject).classList.add("active");
+
+    // Create questions
+    createQuestions(subject);
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+
+
+/* =====================================================
+   CREATE QUESTIONS
+===================================================== */
+
+function createQuestions(subject) {
+
+    const container =
+        document.getElementById(subject + "Questions");
+
+    container.innerHTML = "";
+
+    const subjectQuestions = questions[subject];
+
+    subjectQuestions.forEach(function(item, index) {
+
+        const card = document.createElement("div");
+
+        card.className = "question-card";
+
+        card.innerHTML = `
+            <div class="question-number">
+                Question ${index + 1}
+            </div>
+
+            <div class="question-text">
+                ${item.question}
+            </div>
+
+            <div class="code-title">
+                Code:
+            </div>
+
+            <pre><code>${escapeHTML(item.code)}</code></pre>
+
+            <div class="answer">
+                <strong>Answer:</strong>
+                ${escapeHTML(item.answer)}
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+
+    // Add Back button after all questions
+    const end = document.createElement("div");
+
+    end.className = "end-button";
+
+    end.innerHTML = `
+        <a class="back-button" onclick="backToSubjects()">
+            ← Back to Sample Questions
+        </a>
+    `;
+
+    container.appendChild(end);
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text) {
+
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =====================================================
+   BACK TO SAMPLE QUESTIONS
+===================================================== */
+
+function backToSubjects() {
+
+    // Hide all question pages
+    const pages = document.querySelectorAll(".question-page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    // Show sample question home
+    document.getElementById("sampleHome").style.display = "block";
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>

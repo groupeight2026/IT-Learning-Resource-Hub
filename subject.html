@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Study Resources</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header"><a class="logo" href="index.html"><span class="logo-mark">▣</span><span>IT
+                Learning<br>Resource Hub</span></a><button class="hamburger" onclick="toggleNav()">☰</button>
+        <nav id="nav"><a href="index.html">Home</a><a href="quiz.html">Quizzes</a><a class="active"
+                href="resources.html">Resources</a><a href="questions.html">Sample Questions</a><a
+                href="about.html">About Us</a></nav>
+    </header>
+    <section class="section">
+        <div id="content"></div>
+    </section>
+    <footer>
+        <div>
+            <h4>IT Learning Resource Hub</h4>
+            <p>Learn, practice and improve.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4><a href="index.html">Home</a><a href="resources.html">Resources</a><a
+                href="quiz.html">Quizzes</a>
+        </div>
+        <div>
+            <h4>Topics</h4><a href="questions.html">Questions</a>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>itresourcehub@gmail.com</p>
+        </div>
+        <div class="copyright">© 2026 IT Learning Resource Hub.</div>
+    </footer>
+    <script src="script.js"></script>
+    <script>const books = { "cpp": [["Programming Fundamentals - A Modular Structured Approach using C++", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/144"], ["How to Think Like a Computer Scientist: C++ Version", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/619"]], "csharp": [["Interactive tutorials - A tour of C#", "Microsoft Learn", "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/tutorials/"], ["Learn C#", "Microsoft .NET", "https://dotnet.microsoft.com/en-us/learn/csharp"]], "java": [["Java, Java, Java: Object-Oriented Problem Solving", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/218"], ["Introduction to Programming Using Java - Eighth Edition", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/419"]], "html": [["Structuring content with HTML", "MDN Web Docs", "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"], ["Web development tutorials", "MDN Web Docs", "https://developer.mozilla.org/en-US/docs/MDN/Tutorials"]], "css": [["Getting started with CSS", "MDN Web Docs", "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started"], ["CSS Styling basics", "MDN Web Docs", "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"]], "circuit": [["DC Circuits", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/dc-circuits"], ["AC Circuits", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/ac-circuits"], ["AC Electrical Circuit Analysis: A Practical Approach", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/883"]], "digital-electronics": [["Digital Circuit Projects", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/digital-circuit-projects-an-overview-of-digital-circuits-through-implementing-integrated-circuits"], ["An Animated Introduction to Digital Logic Design", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/1500"], ["Digital Electronics", "Wikibooks", "https://en.wikibooks.org/wiki/Digital_Electronics"]], "digital-communication": [["Digital communications", "OpenLearn - The Open University", "https://www.open.edu/openlearn/digital-computing/digital-communications"], ["Exploring communications technology", "OpenLearn - The Open University", "https://www.open.edu/openlearn/digital-computing/exploring-communications-technology/content-section-0"]], "dbms": [["Database Design - 2nd Edition", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/database-design-2nd-edition"], ["Database concepts and design resources", "Open Textbook Library", "https://open.umn.edu/opentextbooks/subjects/information-systems"]], "data-structure": [["Open Data Structures: An Introduction", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/open-data-structures-an-introduction"], ["An Open Guide to Data Structures and Algorithms", "Open Textbook Library", "https://open.umn.edu/opentextbooks/textbooks/an-open-guide-to-data-structures-and-algorithms"]] }; const names = { "cpp": "C++", "csharp": "C#", "java": "Java", "html": "HTML", "css": "CSS", "circuit": "Circuit", "digital-electronics": "Digital Electronics", "digital-communication": "Digital Communication", "dbms": "Database Management Systems", "data-structure": "Data Structure" }; const icons = { "cpp": "assets/cpp.svg", "csharp": "assets/csharp.svg", "java": "assets/java.svg", "html": "assets/html.svg", "css": "assets/css.svg", "circuit": "assets/circuit.svg", "digital-electronics": "assets/digital-electronics.svg", "digital-communication": "assets/digital-communication.svg", "dbms": "assets/dbms.svg", "data-structure": "assets/data-structure.svg" }; const k = new URLSearchParams(location.search).get('topic') || 'cpp'; const list = books[k] || books.cpp; let cards = list.map(b => `<a class="book-card" href="${b[2]}" target="_blank" rel="noopener"><div class="book-cover"><img src="${icons[k]}" alt=""></div><div class="book-info"><div class="book-label">BOOK / LEARNING LINK</div><h3>${b[0]}</h3><p>${b[1]}</p><span>Open resource ↗</span></div></a>`).join(''); document.getElementById('content').innerHTML = `<div class="eyebrow">STUDY RESOURCE</div><div class="subject-hero"><img src="${icons[k]}" alt="${names[k]}"><div><h1>${names[k]}</h1><p class="muted">Select a book-style link below to start learning.</p></div></div><div class="book-grid">${cards}</div><div style="margin-top:28px"><a class="btn" href="quiz.html?topic=${k}">Take ${names[k]} Quiz →</a><a class="btn alt" href="resources.html">← All Subjects</a></div>`;</script>
+</body>
+
+</html>

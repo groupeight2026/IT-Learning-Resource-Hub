@@ -1,0 +1,1169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programming Resources</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        
+    background: #efe3fc;
+            color: #222;
+        }
+
+        /* ================= HEADER ================= */
+    
+
+        header {
+            background: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #442b02;
+        
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: #442b02;
+            font-weight: bold;
+        }
+
+        /* ================= MAIN ================= */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #2563eb;
+        }
+
+        /* ================= SUBJECT GRID ================= */
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .subject-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .subject-card h2 {
+            font-size: 19px;
+        }
+
+        /* ================= SUBJECT PAGE ================= */
+
+        .subject-page {
+            display: none;
+        }
+
+        .subject-page.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #57357d;
+            color: #f6a6e7;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        .subject-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subject-heading h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subject-heading p {
+            color: #666;
+        }
+
+        /* ================= RESOURCE GRID ================= */
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .resource-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .pdf-link:hover {
+            background: #1d4ed8;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+                margin: 25px auto;
+            }
+
+            .subject-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 27px;
+            }
+
+            .subject-heading h1 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo">
+        IT Learning Resource Hub
+    </div>
+
+    <a href="index.html" class="home-link">
+        Home
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     PROGRAMMING RESOURCES HOME
+===================================================== -->
+
+<div id="resourcesHome" class="container">
+
+    <div class="page-title">
+
+        <h1>
+            Programming Resources
+        </h1>
+
+        <p>
+            Choose a subject to explore PDF resources.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="resourceSearch"
+            placeholder="Search resources..."
+            onkeyup="searchResources()"
+        >
+
+    </div>
+
+
+    <!-- SUBJECT CARDS -->
+
+    <div class="subject-grid">
+
+
+        <div class="subject-card"
+             onclick="openSubject('cpp')">
+
+            <div class="subject-icon">💻</div>
+
+            <h2>C++</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('csharp')">
+
+            <div class="subject-icon">💻</div>
+
+            <h2>C#</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('java')">
+
+            <div class="subject-icon">☕</div>
+
+            <h2>Java</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('html')">
+
+            <div class="subject-icon">🌐</div>
+
+            <h2>HTML</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('css')">
+
+            <div class="subject-icon">🎨</div>
+
+            <h2>CSS</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('circuit')">
+
+            <div class="subject-icon">⚡</div>
+
+            <h2>Circuit</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('electronics')">
+
+            <div class="subject-icon">🔌</div>
+
+            <h2>Digital Electronics</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('communication')">
+
+            <div class="subject-icon">📡</div>
+
+            <h2>Digital Communication</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('dbms')">
+
+            <div class="subject-icon">🗄️</div>
+
+            <h2>DBMS</h2>
+
+        </div>
+
+
+        <div class="subject-card"
+             onclick="openSubject('datastructure')">
+
+            <div class="subject-icon">🌳</div>
+
+            <h2>Data Structure</h2>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     C++
+===================================================== -->
+
+<div id="cpp" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>C++</h1>
+
+        <p>Online PDF resources for C++</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>C++ Programming </h3>
+
+            <p>C++ programming learning material.</p>
+
+            <a href="https://upload.wikimedia.org/wikipedia/commons/4/4b/C++_Programming2008-4-18.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>C++  Lecture Notes</h3>
+
+            <p>C++ programming learning material.</p>
+
+            <a href="https://code-basics.com/blog_posts/what-is-c-plus-plus-programming-language"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     C#
+===================================================== -->
+
+<div id="csharp" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>C#</h1>
+
+        <p>Online PDF resources for C#</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>C# Programming</h3>
+
+            <p>C# programming learning material.</p>
+
+            <a href="https://upload.wikimedia.org/wikipedia/commons/0/07/C_Programming.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>C# Lecture Notes</h3>
+
+            <p>C# programming learning material.</p>
+
+            <a href="https://www.vssut.ac.in/lecture_notes/lecture1424354156.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVA
+===================================================== -->
+
+<div id="java" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>Java</h1>
+
+        <p>Online PDF resources for Java</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3> Java Programming</h3>
+
+            <p>Java programming learning material.</p>
+
+            <a href="https://www.cs.cmu.edu/afs/cs.cmu.edu/user/gchen/www/download/java/LearnJava.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Java Programming Lecture Notes</h3>
+
+            <p>Java programming learning material</p>
+
+            <a href="https://www.slideshare.net/slideshow/java-notespdf-259708081/259708081"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HTML
+===================================================== -->
+
+<div id="html" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>HTML</h1>
+
+        <p>Online PDF resources for HTML</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>HTML Programming </h3>
+
+            <p>HTML learning material.</p>
+
+            <a href=" https://share.google/07ruuMTrlwxTxZvGo"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>HTML Lecture Notes</h3>
+
+            <p>HTML learning material.</p>
+
+            <a href="https://www.freecodecamp.org/news/the-html-handbook/"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CSS
+===================================================== -->
+
+<div id="css" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>CSS</h1>
+
+        <p>Online PDF resources for CSS</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>CSS Programming</h3>
+
+            <p>CSS learning material.</p>
+
+            <a href="https://www.researchgate.net/publication/363908062_CSS_Fundamentals"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>CSS Lecture Notes</h3>
+
+            <p>CSS learning material.</p>
+
+            <a href="https://www.scribd.com/document/700809813/Complete-CSS-Course-Notes"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CIRCUIT
+===================================================== -->
+
+<div id="circuit" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>Circuit</h1>
+
+        <p>Online PDF resources for Circuit</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>Electrical Circuit</h3>
+
+            <p>Electrical circuit concepts.</p>
+
+            <a href="https://www.ibiblio.org/kuphaldt/electricCircuits/Exper/EXP.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Electrical Circuits Lecture Notes</h3>
+
+            <p>Electrical circuit concepts .</p>
+
+            <a href="https://www.vssut.ac.in/lecture_notes/lecture1427131830.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DIGITAL ELECTRONICS
+===================================================== -->
+
+<div id="electronics" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>Digital Electronics</h1>
+
+        <p>Online PDF resources for Digital Electronics</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>Digital Electronics</h3>
+
+            <p>Digital Electronics concepts.</p>
+
+            <a href="https://www.shahucollegelatur.org.in/Department/Studymaterial/sci/it/BCA/FY/digielec.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Digital Electronics Lecture Notes</h3>
+
+            <p>Digital Electronics Concepts.</p>
+
+            <a href="https://share.google/LGRt73UXy7W0Dzubj"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DIGITAL COMMUNICATION
+===================================================== -->
+
+<div id="communication" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>Digital Communication</h1>
+
+        <p>Online PDF resources for Digital Communication</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>Digital Communication</h3>
+
+            <p>Digital communication concepts.</p>
+
+            <a href="https://pearson.com/content/dam/one-dot-com/one-dot-com/hei-samples/technology/9780134588568.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Digital Communication Lecture Notes</h3>
+
+            <p>Digital communication concepts.</p>
+
+            <a href="https://share.google/8lJj2iAaf1zZDF6gw"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DBMS
+===================================================== -->
+
+<div id="dbms" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>DBMS</h1>
+
+        <p>Online PDF resources for Database Management Systems</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>Database Management Systems</h3>
+
+            <p>Database management systems concepts.</p>
+
+            <a href="https://share.google/0gVL8LsrjrQaMFyQ8"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Database Management Systems Lecture Notes </h3>
+
+            <p>Database management systems concepts.</p>
+
+            <a href="https://www.slideshare.net/slideshow/dbms-notespdf-253794532/253794532"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     DATA STRUCTURE
+===================================================== -->
+
+<div id="datastructure" class="subject-page container">
+
+    <a class="back-button" onclick="backToSubjects()">
+        ← Back
+    </a>
+
+    <div class="subject-heading">
+
+        <h1>Data Structure</h1>
+
+        <p>Online PDF resources for Data Structure</p>
+
+    </div>
+
+
+    <div class="resource-grid">
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📘</div>
+
+            <h3>Data Structures and Algorithms</h3>
+
+            <p>Data structures and algorithms concepts.</p>
+
+            <a href="https://mta.ca/~rrosebru/oldcourse/263114/Dsa.pdf"
+               target="_blank"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+        <div class="resource-card">
+
+            <div class="resource-icon">📕</div>
+
+            <h3>Data Structures and Algorithms Lecture Notes</h3>
+
+            <p>Data structures and algorithms concepts. </p>
+
+            <a href="https://share.google/jCx6kKRsGy9FrBywR"
+               class="pdf-link">
+                Open Resource
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   OPEN SUBJECT
+===================================================== */
+
+function openSubject(subject) {
+
+    document.getElementById("resourcesHome").style.display = "none";
+
+    const pages = document.querySelectorAll(".subject-page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(subject).classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =====================================================
+   BACK TO SUBJECTS
+===================================================== */
+
+function backToSubjects() {
+
+    const pages = document.querySelectorAll(".subject-page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("resourcesHome").style.display = "block";
+
+    document.getElementById("resourceSearch").value = "";
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =====================================================
+   SEARCH RESOURCE TITLES
+===================================================== */
+
+function searchResources() {
+
+    const search = document
+        .getElementById("resourceSearch")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const resourcesHome = document.getElementById("resourcesHome");
+    const subjectCards = document.querySelectorAll(".subject-card");
+    const subjectPages = document.querySelectorAll(".subject-page");
+
+    // Remove old search results first
+    let results = document.getElementById("searchResults");
+    if (results) {
+        results.remove();
+    }
+
+    // Empty search -> show the normal subject list
+    if (search === "") {
+        resourcesHome.style.display = "block";
+        subjectCards.forEach(function(card) {
+            card.style.display = "";
+        });
+        subjectPages.forEach(function(page) {
+            page.classList.remove("active");
+        });
+        return;
+    }
+
+    // Hide all subject buttons while searching
+    subjectCards.forEach(function(card) {
+        card.style.display = "none";
+    });
+
+    subjectPages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    // Create ONE search-results area
+    results = document.createElement("div");
+    results.id = "searchResults";
+    results.className = "resource-grid";
+    results.style.marginTop = "20px";
+    resourcesHome.appendChild(results);
+
+    let found = 0;
+
+    // Search ONLY the title (<h3>) of every book.
+    // The complete phrase typed by the user must appear in the title.
+    document.querySelectorAll(".resource-card").forEach(function(card) {
+
+        const titleElement = card.querySelector("h3");
+        if (!titleElement) return;
+
+        const title = titleElement.textContent
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+
+        if (title.includes(search)) {
+            const resultCard = card.cloneNode(true);
+            resultCard.style.display = "block";
+            results.appendChild(resultCard);
+            found++;
+        }
+    });
+
+    // No matching title
+    if (found === 0) {
+        results.innerHTML = `
+            <p style="grid-column: 1 / -1; text-align:center; color:#666; padding:30px;">
+                No resource found for "${search}"
+            </p>
+        `;
+    }
+}
+
+
+</script>
+
+
+</body>
+</html>
