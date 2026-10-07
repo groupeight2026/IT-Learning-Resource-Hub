@@ -219,3 +219,45 @@ footer p {
     .hamburger {
         display: block
     }}
+    /* Mobile Responsive Design */
+@media (max-width: 768px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
